@@ -15,17 +15,27 @@ namespace Team404.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult ComputerParts()
         {
             ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Accessories()
         {
             ViewData["Message"] = "Your contact page.";
 
+            return View();
+        }
+
+        public IActionResult Bundles()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
             return View();
         }
 
