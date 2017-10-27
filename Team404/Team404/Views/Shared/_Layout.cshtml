@@ -36,7 +36,8 @@
 
                      <!-- Computer Parts Nav Start -->
                     <li class="dropdown">
-                        <a asp-area="" asp-controller="ComputerParts" asp-action="Index" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">Computer Parts<span class="caret"></span></a>
+                        <a asp-area="" asp-controller="ComputerParts" asp-action="Index" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" 
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Computer Parts<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Cases</a></li>
                             <li><a href="#">Processors</a></li>
@@ -50,11 +51,12 @@
                         </ul>
                     </li>
                     <!-- Computer Parts Nav End -->
-
-                    <li><a asp-area="" asp-controller="Accessories" asp-action="Index">Accessories<span class="caret"></span></a></li>
+                        
+                    <!-- Accessories Nav Start -->
                     <li class="dropdown">
-                        <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                        <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle" 
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li><a href="#">Chargers</a></li>
                             <li><a href="#">Adapter</a></li>
                             <li role="separator" class="divider"></li>
@@ -63,19 +65,29 @@
                             <li><a href="#">Head Phones</a></li>
                             <li><a href="#">Storage Devices</a></li>
                         </ul>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Bundles">Bundles</a></li>
+                    </li>
+                    <!-- Accessories Nav End -->
+
+                    <!-- Bundles Nav Start -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Past<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                        <a asp-area="" asp-controller="Bundles" asp-action="Index" class="dropdown-toggle" 
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bundles<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li><a href="#">Beginner</a></li>
                             <li><a href="#">Mid-Grade</a></li>
                             <li><a href="#">Professional</a></li>
                         </ul>
+                    </li>
+                    <!-- Bundles Nav End -->
+                    <!-- Contact Seperate Nav -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right pull-right" id="groupnav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> <!-- End Nav Bar -->
+        
     <div class="container body-content">
         @RenderBody()
         <hr />
