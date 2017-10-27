@@ -33,9 +33,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+
+                     <!-- Computer Parts Nav Start -->
                     <li class="dropdown">
-                        <a asp-area="" asp-controller="Home" asp-action="ComputerParts" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-                            aria-haspopup="true" aria-expanded="false">Computer Parts<span class="caret"></span></a>
+                        <a asp-area="" asp-controller="ComputerParts" asp-action="Index" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">Computer Parts<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Cases</a></li>
                             <li><a href="#">Processors</a></li>
@@ -48,9 +49,11 @@
                             <li><a href="#">Power Supply</a></li>
                         </ul>
                     </li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories<span class="caret"></span></a></li>
+                    <!-- Computer Parts Nav End -->
+
+                    <li><a asp-area="" asp-controller="Accessories" asp-action="Index">Accessories<span class="caret"></span></a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Past<span class="caret"></span></a>
+                        <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                             <li><a href="#">Chargers</a></li>
                             <li><a href="#">Adapter</a></li>
