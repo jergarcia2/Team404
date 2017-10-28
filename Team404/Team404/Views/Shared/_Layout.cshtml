@@ -37,24 +37,24 @@
                      <!-- Computer Parts Nav Start -->
                     <li class="dropdown">
                         <a asp-area="" asp-controller="ComputerParts" asp-action="Index" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" 
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Computer Parts<span class="caret"></span></a>
+                            data-toggle="dropdown" role="button">Computer Parts<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Cases</a></li>
-                            <li><a href="#">Processors</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Motherboards</a></li>
-                            <li><a href="#">Memory</a></li>
-                            <li><a href="#">Cooling Systems</a></li>
-                            <li><a href="#">Sound Cards</a></li>
-                            <li><a href="#">Video Cards</a></li>
-                            <li><a href="#">Power Supply</a></li>
+                            <li><a href="~/ComputerParts/Cases">Cases</a></li>
+                            <li><a href="~/ComputerParts/Processors">Processors</a></li>
+                            <li role="separator" class="divider"></li> <!-- Optional Divider -->
+                            <li><a href="~/ComputerParts/Motherboards">Motherboards</a></li>
+                            <li><a href="~/ComputerParts/Memory">Memory</a></li>
+                            <li><a href="~/ComputerParts/CoolingSystems">Cooling Systems</a></li>
+                            <li><a href="~/ComputerParts/SoundCards">Sound Cards</a></li>
+                            <li><a href="~/ComputerParts/VideoCards">Video Cards</a></li>
+                            <li><a href="~/ComputerParts/PowerSupply">Power Supply</a></li>
                         </ul>
                     </li>
                     <!-- Computer Parts Nav End -->
                         
                     <!-- Accessories Nav Start -->
                     <li class="dropdown">
-                        <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle" 
+                        <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle"
                             data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Chargers</a></li>
@@ -79,23 +79,41 @@
                         </ul>
                     </li>
                     <!-- Bundles Nav End -->
-                    <!-- Contact Seperate Nav -->
+                    <!-- Contact Nav -->
                 </ul>
                 <ul class="nav navbar-nav navbar-right pull-right" id="groupnav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
-                </ul>
+                </ul> <!-- End Contact Nav -->
+            </div> <!-- End navbar-collapse -->
+        </div> <!-- End nav container -->
+    </nav> <!-- End Nav Bar -->
+
+    <!-- Body Start -->    
+    <div class="container body-content">
+            <div class="row">
+                <div class="col-md-12" id="">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+            @RenderBody()
+            <div class="row">
+                <div class="col-md-3" id="filter">
+                    <h2>@ViewBag.SideBarTitle</h2>
+                </div>
+                <div class="col-md-7" id="maincontent">
+                    <h2>@ViewBag.MainTitle</h2>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <footer id="sitemap">
+                    <p>&copy; @DateTime.Now.Year - Team 404</p>
+                </footer>
             </div>
         </div>
-    </nav> <!-- End Nav Bar -->
-        
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - Team404</p>
-        </footer>
     </div>
-
+    <!-- Body End -->
+        
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
