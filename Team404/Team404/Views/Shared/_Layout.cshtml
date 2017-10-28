@@ -87,15 +87,33 @@
             </div>
         </div>
     </nav> <!-- End Nav Bar -->
-        
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - Team404</p>
-        </footer>
-    </div>
 
+    <!-- Body Start -->    
+    <div class="container body-content">
+            <div class="row">
+                <div class="col-md-12" id="">
+                    <h1>@ViewBag.Title</h1>
+                </div>
+            </div>
+            @RenderBody()
+            <div class="row">
+                <div class="col-md-3" id="filter">
+                    <h2>@ViewBag.SideBarTitle</h2>
+                </div>
+                <div class="col-md-7" id="maincontent">
+                    <h2>@ViewBag.MainTitle</h2>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <footer id="sitemap">
+                    <p>&copy; @DateTime.Now.Year - Team 404</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- Body End -->
+        
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
