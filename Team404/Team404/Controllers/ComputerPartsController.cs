@@ -15,5 +15,45 @@ namespace Team404.Controllers
         {
             return View();
         }
+
+        public IActionResult Cases()
+        {
+            return View();
+        }
+
+        public IActionResult CoolingSystems()
+        {
+            return View();
+        }
+
+        public IActionResult Memory()
+        {
+            return View();
+        }
+
+        public IActionResult Motherboards()
+        {
+            return View();
+        }
+
+        public IActionResult PowerSupply()
+        {
+            return View();
+        }
+
+        public IActionResult Processors()
+        {
+            return View();
+        }
+
+        public IActionResult SoundCards()
+        {
+            return View();
+        }
+
+        public IActionResult VideoCards()
+        {
+            return View();
+        }
     }
 }
