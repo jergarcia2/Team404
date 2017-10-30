@@ -1,11 +1,11 @@
 ﻿@using Team404.Models;
-@using PhonesVM;
+@model PhonesVM;
 
 @{
     ViewBag.Title = "Head Phones";
 }
 
-<h1>ViewBag.Title</h1>
+<h1>@ViewBag.Title</h1>
 
 @foreach (var P in Model.PhonesItems)
 {
