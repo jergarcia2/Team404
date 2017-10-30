@@ -1,8 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Team404.Models;
+@using MiscCabelsVM;
+
 @{
     ViewBag.Title = "Misc. Cables";
 }
 
 <h1>ViewBag.Title</h1>
+
+@foreach (var MC in Model.MiscCableItems)
+{
+    <div class="item">
+        <h4>@MC.ItemTitle</h4>
+        <h2>@MC.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in MC.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @MC.ItemLink </button>
+        </div>
+    </div>
+}

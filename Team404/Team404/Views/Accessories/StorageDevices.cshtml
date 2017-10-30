@@ -1,8 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Team404.Models;
+@model StorageDevicesVM;
+
 @{
     ViewBag.Title = "Storage Devices";
 }
 
 <h1>ViewBag.Title</h1>
+
+@foreach (var SD in Model.StorageDevicesItems)
+{
+    <div class="item">
+        <h4>@SD.ItemTitle</h4>
+        <h2>@SD.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in SD.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @SD.ItemLink </button>
+        </div>
+    </div>
+}
