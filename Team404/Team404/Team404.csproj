@@ -17,4 +17,7 @@
     <Folder Include="Views\Bundles\" />
     <Folder Include="Views\Accessories\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Accessories\Memory.cshtml" />
+  </ItemGroup>
 </Project>
