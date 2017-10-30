@@ -20,44 +20,130 @@ namespace Team404.Controllers
 
         public IActionResult Cases()
         {
-            return View();
+            CasesVM model = new CasesVM();
+            CPCases Item1 = new CPCases();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.CasesItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult CoolingSystems()
         {
-            return View();
+            CoolingSystemsVM model = new CoolingSystemsVM();
+            CPCoolingSystems Item1 = new CPCoolingSystems();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.CoolingSystemItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult Memory()
         {
-            return View();
+            MemoryVM model = new MemoryVM();
+            CPMemory Item1 = new CPMemory();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.MemoryItems.Add(Item1);
 
-            ViewData["Message"] = "Memory Stuff here....";
+            return View(model);
         }
 
         public IActionResult Motherboards()
         {
-            return View();
+            MotherboardVM model = new MotherboardVM();
+            CPMotherboard Item1 = new CPMotherboard();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.MotherboardItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult PowerSupply()
         {
-            return View();
+            PowerSupplyVM model = new PowerSupplyVM();
+            CPPowerSupply Item1 = new CPPowerSupply();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.PowerSupplyItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult Processors()
         {
-            return View();
+            ProcessorsVM model = new ProcessorsVM();
+            CPProcessors Item1 = new CPProcessors();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.ProcessorsItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult SoundCards()
         {
-            return View();
+            SoundCardsVM model = new SoundCardsVM();
+            CPSoundCards Item1 = new CPSoundCards();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.SoundCardsItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult VideoCards()
         {
-            return View();
+            VideoCardsVM model = new VideoCardsVM();
+            CPVideoCards Item1 = new CPVideoCards();
+            Item1.ItemTitle = "Item 1 Title Goes Here";
+            Item1.ItemLink = "View Item Details";
+            Item1.MiniDescription.Add("UPC:xxxxxxxxx");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            Item1.MiniDescription.Add("Bullet goes here");
+            model.VideoCardsItems.Add(Item1);
+
+            return View(model);
         }
 
         public IActionResult Error()
