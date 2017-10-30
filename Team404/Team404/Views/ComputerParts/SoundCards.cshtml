@@ -1,6 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Computer Parts";
+﻿@using Team404.Models;
+@model SoundCardsVM;
+
+@{
+    ViewData["Title"] = "Sound Cards";
 }
 <h2>@ViewData["Title"]</h2>
 
-<p>Use this area to put in computer parts etc....</p>
+<h3>Sound Cards</h3>
+
+@foreach (var SC in Model.SoundCardsItems)
+{
+    <div class="item">
+        <h4>@SC.ItemTitle</h4>
+        <h2>@SC.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in SC.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @SC.ItemLink </button>
+        </div>
+    </div>
+}
