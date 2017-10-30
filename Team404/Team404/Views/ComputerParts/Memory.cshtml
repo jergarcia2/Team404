@@ -1,5 +1,24 @@
-﻿@{
+﻿@using Team404.Models;
+@model MemoryVM;
+
+@{
     ViewData["Title"] = "Memory";
 }
 <h2>@ViewData["Title"]</h2>
-<p>@ViewData["Message"]</p>
+
+@foreach (var M in Model.MemoryItems)
+{
+    <div class="item">
+        <h4>@M.ItemTitle</h4>
+        <h2>@M.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in M.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @M.ItemLink </button>
+        </div>
+    </div>
+}
