@@ -1,11 +1,11 @@
 ﻿@using Team404.Models;
-@using MiscCabelsVM;
+@model MiscCablesVM;
 
 @{
     ViewBag.Title = "Misc. Cables";
 }
 
-<h1>ViewBag.Title</h1>
+<h1>@ViewBag.Title</h1>
 
 @foreach (var MC in Model.MiscCableItems)
 {
