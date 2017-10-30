@@ -18,6 +18,36 @@ namespace Team404.Controllers
             return View();
         }
 
+        public IActionResult Adapter()
+        {
+            return View();
+        }
+
+        public IActionResult Chargers()
+        {
+            return View();
+        }
+
+        public IActionResult HeadPhones()
+        {
+            return View();
+        }
+
+        public IActionResult Memory()
+        {
+            return View();
+        }
+
+        public IActionResult MiscCables()
+        {
+            return View();
+        }
+
+        public IActionResult StorageDevices()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
