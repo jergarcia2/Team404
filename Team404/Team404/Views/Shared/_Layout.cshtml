@@ -6,12 +6,12 @@
     <title>@ViewData["Title"] - Team404</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-superhero.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap-superhero.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
@@ -57,13 +57,12 @@
                         <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle"
                             data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Chargers</a></li>
-                            <li><a href="#">Adapter</a></li>
+                            <li><a href="~/Accessories/Chargers">Chargers</a></li>
+                            <li><a href="~/Accessories/Adapter">Adapter</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Misc. Cables</a></li>
-                            <li><a href="#">Memory</a></li>
-                            <li><a href="#">Head Phones</a></li>
-                            <li><a href="#">Storage Devices</a></li>
+                            <li><a href="~/Accessories/MiscCables">Misc. Cables</a></li>
+                            <li><a href="~/Accessories/HeadPhones">Head Phones</a></li>
+                            <li><a href="~/Accessories/StorageDevices">Storage Devices</a></li>
                         </ul>
                     </li>
                     <!-- Accessories Nav End -->
@@ -73,9 +72,9 @@
                         <a asp-area="" asp-controller="Bundles" asp-action="Index" class="dropdown-toggle" 
                             data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bundles<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Beginner</a></li>
-                            <li><a href="#">Mid-Grade</a></li>
-                            <li><a href="#">Professional</a></li>
+                            <li><a href="~/Bundles/Beginner">Beginner</a></li>
+                            <li><a href="~/Bundles/MidGrade">Mid-Grade</a></li>
+                            <li><a href="~/Bundles/Professional">Professional</a></li>
                         </ul>
                     </li>
                     <!-- Bundles Nav End -->

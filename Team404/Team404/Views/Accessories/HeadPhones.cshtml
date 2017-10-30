@@ -1,13 +1,13 @@
 ﻿@using Team404.Models;
-@model ProcessorsVM;
+@model PhonesVM;
 
 @{
-    ViewData["Title"] = "Processors";
+    ViewBag.Title = "Head Phones";
 }
-<h2>@ViewData["Title"]</h2>
-<h3> Processors</h3>
 
-@foreach (var P in Model.ProcessorsItems)
+<h1>@ViewBag.Title</h1>
+
+@foreach (var P in Model.PhonesItems)
 {
     <div class="item">
         <h4>@P.ItemTitle</h4>

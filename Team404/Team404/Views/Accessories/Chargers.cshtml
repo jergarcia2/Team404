@@ -1,0 +1,26 @@
+﻿@using Team404.Models;
+@model ChargersVM;
+
+@{
+    ViewBag.Title = "Charger";
+}
+
+<h1>ViewBag.Title</h1>
+
+@foreach (var C in Model.ChargersItems)
+{
+    <div class="item">
+        <h4>@C.ItemTitle</h4>
+        <h2>@C.ItemPrice</h2>
+
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in C.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @C.ItemLink </button>
+        </div>
+    </div>
+}

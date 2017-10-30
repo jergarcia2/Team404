@@ -17,4 +17,8 @@
     <Folder Include="Views\Bundles\" />
     <Folder Include="Views\Accessories\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Accessories\Memory.cshtml" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap %28copy%29.css" />
+  </ItemGroup>
 </Project>

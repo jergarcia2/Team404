@@ -1,0 +1,25 @@
+﻿@using Team404.Models;
+@model AdaptersVM
+
+@{
+    ViewBag.Title = "Adapers";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@foreach (var A in Model.AdaptersItems)
+{
+    <div class="item">
+        <h4>@A.ItemTitle</h4>
+        <h2>@A.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in A.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @A.ItemLink </button>
+        </div>
+    </div>
+}

@@ -1,6 +1,24 @@
-﻿@{
+﻿@using Team404.Models;
+@model CasesVM
+
+@{
     ViewBag.Title = "Cases";
 }
-<h2>@ViewData["Title"]</h2>
+<h3>@ViewBag.Title</h3>
 
-<p>Use this area to put in computer parts etc....</p>
+@foreach (var cpcase in Model.CasesItems)
+{
+    <div class="item">
+        <h4>@cpcase.ItemTitle</h4>
+        <h2>@cpcase.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in cpcase.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @cpcase.ItemLink </button>
+        </div>
+    </div>
+}

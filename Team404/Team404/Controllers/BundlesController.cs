@@ -18,6 +18,20 @@ namespace Team404.Controllers
             return View();
         }
 
+        public IActionResult Beginner()
+        {
+            return View();
+        }
+
+        public IActionResult MidGrade()
+        {
+            return View();
+        }
+
+        public IActionResult Professional()
+        {
+            return View();
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

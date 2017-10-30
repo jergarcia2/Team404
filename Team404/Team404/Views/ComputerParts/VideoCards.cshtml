@@ -1,6 +1,25 @@
-﻿@{
-    ViewData["Title"] = "Computer Parts";
+﻿@using Team404.Models;
+@model VideoCardsVM;
+
+@{
+    ViewData["Title"] = "Video Cards";
 }
 <h2>@ViewData["Title"]</h2>
 
-<p>Use this area to put in computer parts etc....</p>
+@foreach (var VC in Model.VideoCardsItems)
+{
+    <div class="item">
+        <h4>@VC.ItemTitle</h4>
+        <h2>@VC.ItemPrice</h2>
+        <div class="minidescription">
+            <ul>
+                @foreach (var bp in VC.MiniDescription)
+                {
+                    <li>@bp</li>
+                }
+            </ul>
+            <button class="Link"> @VC.ItemLink </button>
+        </div>
+    </div>
+
+}
