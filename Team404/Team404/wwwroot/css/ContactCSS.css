@@ -1,0 +1,18 @@
+﻿label {
+    display: block;
+    float: left;
+    clear: left;
+    width: 150px;
+    font-weight: bold
+}
+
+input, textarea, select {
+    display: block;
+    width: 300px;
+    margin-bottom: 5px;
+    margin-left: 150px
+}
+
+textarea {
+    height: 75px
+}
