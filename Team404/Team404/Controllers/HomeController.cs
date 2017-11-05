@@ -29,6 +29,22 @@ namespace Team404.Controllers
             return View();
         }
 
+        [HttpPost] //Processed when calling the 'Post' method
+        public IActionResult Contact(ContactFM formModel)
+        {
+            //Validate Form Data
+            if (string.IsNullOrWhiteSpace(formModel.ContactMessage))
+            {
+                return View();
+            }
+            return Redirect("ContactResponse");
+        }
+
+        public IActionResult ContactResponse ()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
