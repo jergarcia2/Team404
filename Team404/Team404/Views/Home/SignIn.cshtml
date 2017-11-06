@@ -1,0 +1,24 @@
+﻿
+@{
+	ViewData["PageTitle"] = "Sign In ";
+	ViewData["PageName"] = "Sign-In";
+}
+@section css {
+	<link href="~/css/SignInCSS.css" rel="stylesheet" type="text/css" />
+
+}
+
+
+<form method="post" action="~/Home/SignIn" id="signin_form">
+
+	<label id="name" for="account_email">Email Address:</label>
+	<input type="email" name="AccountEmail" id="account_email" placeholder="Please provide email address" maxlength="50">
+
+	<label id="name" for="account_password">Password:</label>
+	<input type="password" name="AccountPassword" id="account_password" placeholder="Please provide password" maxlength="50">
+
+	<input type="submit" id="Login_Button" OnClick="yourButtonId_Click" Text="Login" runat="server" />
+
+
+
+</form>
