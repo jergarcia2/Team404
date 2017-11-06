@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\ComputerParts\" />
+    <Folder Include="Views\Bundles\" />
+    <Folder Include="Views\Accessories\" />
+    <Folder Include="wwwroot\images\bundleimages\" />
+    <Folder Include="wwwroot\images\siteimages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Accessories\Memory.cshtml" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\bootstrap %28copy%29.css" />
+    <Content Remove="wwwroot\images\siteimages\Logo2-navbar.png" />
+    <Content Remove="wwwroot\css\script.js" />
+  </ItemGroup>
+</Project>
