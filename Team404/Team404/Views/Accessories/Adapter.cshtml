@@ -2,10 +2,10 @@
 @model AdaptersVM
 
 @{
-    ViewBag.Title = "Adapers";
+    ViewData["PageTitle"] = "Adapers";
 }
 
-<h1>@ViewBag.Title</h1>
+
 
 @foreach (var A in Model.AdaptersItems)
 {
@@ -22,4 +22,36 @@
             <button class="Link"> @A.ItemLink </button>
         </div>
     </div>
+	<div id="hidden">
+		<p><b>Feature Summary</b></p>
+		<div id="long">
+			<ul>
+				@foreach (var more in A.LongDescription)
+				{
+					<li>@more</li>
+				}
+			</ul>
+			>
+			<button type="button" id="Wishlist">@A.Wishlist</button>
+			<button type="button" id="Remove">@A.RemoveDetails</button>
+		</div>
+		<table id="pricetable">
+			<tr>
+				<th id="colname">Online Retailer</th>
+				<th id="colname">Price</th>
+			</tr>
+			<tr>
+				<td id="box">
+					<a href="#" target="_blank">
+						@A.Price1Name
+					</a>
+				</td>
+				<td id="box">$@A.ItemPrice</td>
+			</tr>
+			<tr>
+				<td id="box"><a href="#" target="_blank"></a>@A.Price2Name</td>
+				<td id="box">$@A.ItemPrice2</td>
+			</tr>
+		</table>
+	</div>
 }

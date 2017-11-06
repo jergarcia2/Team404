@@ -2,10 +2,10 @@
 @model ChargersVM;
 
 @{
-    ViewBag.Title = "Charger";
+    ViewData["PageTitle"] = "Chargers";
 }
 
-<h1>ViewBag.Title</h1>
+
 
 @foreach (var C in Model.ChargersItems)
 {
@@ -23,4 +23,35 @@
             <button class="Link"> @C.ItemLink </button>
         </div>
     </div>
+	<div id="hidden">
+		<p><b>Feature Summary</b></p>
+		<div id="long">
+			<ul>
+				@foreach (var more in C.LongDescription)
+				{
+					<li>@more</li>
+				}
+			</ul>
+			<button type="button" id="Wishlist">@C.Wishlist</button>
+			<button type="button" id="Remove">@C.RemoveDetails</button>
+		</div>
+		<table id="pricetable">
+			<tr>
+				<th id="colname">Online Retailer</th>
+				<th id="colname">Price</th>
+			</tr>
+			<tr>
+				<td id="box">
+					<a href="#" target="_blank">
+						@C.Price1Name
+					</a>
+				</td>
+				<td id="box">$@C.ItemPrice</td>
+			</tr>
+			<tr>
+				<td id="box"><a href="#" target="_blank"></a>@C.Price2Name</td>
+				<td id="box">$@C.ItemPrice2</td>
+			</tr>
+		</table>
+	</div>
 }

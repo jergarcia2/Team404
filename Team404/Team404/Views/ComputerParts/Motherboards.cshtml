@@ -2,9 +2,9 @@
 @model MotherboardVM;
 
 @{
-    ViewData["Title"] = "Motherboards";
+    ViewData["PageTitle"] = "Motherboards";
 }
-<h2>@ViewData["Title"]</h2>
+
 
 @foreach (var MB in Model.MotherboardItems)
 {
@@ -21,4 +21,35 @@
             <button class="Link"> @MB.ItemLink </button>
         </div>
     </div>
+	<div id="hidden">
+		<p><b>Feature Summary</b></p>
+		<div id="long">
+			<ul>
+				@foreach (var more in MB.LongDescription)
+				{
+					<li>@more</li>
+				}
+			</ul>
+			<button type="button" id="Wishlist">@MB.Wishlist</button>
+			<button type="button" id="Remove">@MB.RemoveDetails</button>
+		</div>
+		<table id="pricetable">
+			<tr>
+				<th id="colname">Online Retailer</th>
+				<th id="colname">Price</th>
+			</tr>
+			<tr>
+				<td id="box">
+					<a href="#" target="_blank">
+						@MB.Price1Name
+					</a>
+				</td>
+				<td id="box">$@MB.ItemPrice</td>
+			</tr>
+			<tr>
+				<td id="box"><a href="#" target="_blank"></a>@MB.Price2Name</td>
+				<td id="box">$@MB.ItemPrice2</td>
+			</tr>
+		</table>
+	</div>
 }

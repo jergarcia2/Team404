@@ -2,10 +2,10 @@
 @model StorageDevicesVM;
 
 @{
-    ViewBag.Title = "Storage Devices";
+    ViewData["PageTitle"] = "Storage Devices";
 }
 
-<h1>ViewBag.Title</h1>
+
 
 @foreach (var SD in Model.StorageDevicesItems)
 {
@@ -22,4 +22,35 @@
             <button class="Link"> @SD.ItemLink </button>
         </div>
     </div>
+	<div id="hidden">
+		<p><b>Feature Summary</b></p>
+		<div id="long">
+			<ul>
+				@foreach (var more in SD.LongDescription)
+				{
+					<li>@more</li>
+				}
+			</ul>
+			<button type="button" id="Wishlist">@SD.Wishlist</button>
+			<button type="button" id="Remove">@SD.RemoveDetails</button>
+		</div>
+		<table id="pricetable">
+			<tr>
+				<th id="colname">Online Retailer</th>
+				<th id="colname">Price</th>
+			</tr>
+			<tr>
+				<td id="box">
+					<a href="#" target="_blank">
+						@SD.Price1Name
+					</a>
+				</td>
+				<td id="box">$@SD.ItemPrice</td>
+			</tr>
+			<tr>
+				<td id="box"><a href="#" target="_blank"></a>@SD.Price2Name</td>
+				<td id="box">$@SD.ItemPrice2</td>
+			</tr>
+		</table>
+	</div>
 }

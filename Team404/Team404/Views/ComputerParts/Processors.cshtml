@@ -2,10 +2,9 @@
 @model ProcessorsVM;
 
 @{
-    ViewData["Title"] = "Processors";
+    ViewData["PageTitle"] = "Processors";
 }
-<h2>@ViewData["Title"]</h2>
-<h3> Processors</h3>
+
 
 @foreach (var P in Model.ProcessorsItems)
 {
@@ -22,4 +21,35 @@
             <button class="Link"> @P.ItemLink </button>
         </div>
     </div>
+	<div id="hidden">
+		<p><b>Feature Summary</b></p>
+		<div id="long">
+			<ul>
+				@foreach (var more in P.LongDescription)
+				{
+					<li>@more</li>
+				}
+			</ul>
+			<button type="button" id="Wishlist">@P.Wishlist</button>
+			<button type="button" id="Remove">@P.RemoveDetails</button>
+		</div>
+		<table id="pricetable">
+			<tr>
+				<th id="colname">Online Retailer</th>
+				<th id="colname">Price</th>
+			</tr>
+			<tr>
+				<td id="box">
+					<a href="#" target="_blank">
+						@P.Price1Name
+					</a>
+				</td>
+				<td id="box">$@P.ItemPrice</td>
+			</tr>
+			<tr>
+				<td id="box"><a href="#" target="_blank"></a>@P.Price2Name</td>
+				<td id="box">$@P.ItemPrice2</td>
+			</tr>
+		</table>
+	</div>
 }

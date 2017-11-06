@@ -2,9 +2,8 @@
 @model SoundCardsVM;
 
 @{
-    ViewData["Title"] = "Sound Cards";
+    ViewData["PageTitle"] = "Sound Cards";
 }
-<h2>@ViewData["Title"]</h2>
 
 @foreach (var SC in Model.SoundCardsItems)
 {
@@ -21,4 +20,35 @@
             <button class="Link"> @SC.ItemLink </button>
         </div>
     </div>
+	<div id="hidden">
+		<p><b>Feature Summary</b></p>
+		<div id="long">
+			<ul>
+				@foreach (var more in SC.LongDescription)
+				{
+					<li>@more</li>
+				}
+			</ul>
+			<button type="button" id="Wishlist">@SC.Wishlist</button>
+			<button type="button" id="Remove">@SC.RemoveDetails</button>
+		</div>
+		<table id="pricetable">
+			<tr>
+				<th id="colname">Online Retailer</th>
+				<th id="colname">Price</th>
+			</tr>
+			<tr>
+				<td id="box">
+					<a href="#" target="_blank">
+						@SC.Price1Name
+					</a>
+				</td>
+				<td id="box">$@SC.ItemPrice</td>
+			</tr>
+			<tr>
+				<td id="box"><a href="#" target="_blank"></a>@SC.Price2Name</td>
+				<td id="box">$@SC.ItemPrice2</td>
+			</tr>
+		</table>
+	</div>
 }

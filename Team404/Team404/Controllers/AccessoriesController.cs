@@ -14,8 +14,10 @@ namespace Team404.Controllers
     {
         // GET: /<controller>/
         public IActionResult Index()
-        {
-            return View();
+        {	
+
+
+			return View();
         }
 
         public IActionResult Adapter()

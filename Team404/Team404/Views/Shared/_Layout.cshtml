@@ -8,6 +8,8 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-superhero.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+		<script src="https://code.jquery.com/jquery-2.2.4.js"></script> 
+		<script src="~/css/script.js"></script>
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -15,96 +17,120 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+	@RenderSection("css", required: false)
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                    
-                <!--Navbar Logo -->
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Team404</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-
-                     <!-- Computer Parts Nav Start -->
-                    <li class="dropdown">
-                        <a asp-area="" asp-controller="ComputerParts" asp-action="Index" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" 
-                            data-toggle="dropdown" role="button">Computer Parts<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="~/ComputerParts/Cases">Cases</a></li>
-                            <li><a href="~/ComputerParts/Processors">Processors</a></li>
-                            <li role="separator" class="divider"></li> <!-- Optional Divider -->
-                            <li><a href="~/ComputerParts/Motherboards">Motherboards</a></li>
-                            <li><a href="~/ComputerParts/Memory">Memory</a></li>
-                            <li><a href="~/ComputerParts/CoolingSystems">Cooling Systems</a></li>
-                            <li><a href="~/ComputerParts/SoundCards">Sound Cards</a></li>
-                            <li><a href="~/ComputerParts/VideoCards">Video Cards</a></li>
-                            <li><a href="~/ComputerParts/PowerSupply">Power Supply</a></li>
-                        </ul>
-                    </li>
-                    <!-- Computer Parts Nav End -->
+    <header class="nav-wrapper">
+        <nav class="nav navbar navbar-inverse navbar-fixed-top" id="topnav">
+    		<div class="container navmain">
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
                         
-                    <!-- Accessories Nav Start -->
-                    <li class="dropdown">
-                        <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle"
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="~/Accessories/Chargers">Chargers</a></li>
-                            <li><a href="~/Accessories/Adapter">Adapter</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="~/Accessories/MiscCables">Misc. Cables</a></li>
-                            <li><a href="~/Accessories/HeadPhones">Head Phones</a></li>
-                            <li><a href="~/Accessories/StorageDevices">Storage Devices</a></li>
+                    <!--Navbar Logo -->
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                        <ul class="nav navbar navlogocombo">
+                        <img src="~/images/siteimages/Logo2-navmain.png" alt="navlogo" title="navlogo" id="navlogo" height="50" width="50"/>
+                        <img src="~/images/siteimages/LogoName-navbar.png" alt="Logo Name" title="navtitle" id="navtitle" height="30"/>  
                         </ul>
-                    </li>
-                    <!-- Accessories Nav End -->
-
-                    <!-- Bundles Nav Start -->
-                    <li class="dropdown">
-                        <a asp-area="" asp-controller="Bundles" asp-action="Index" class="dropdown-toggle" 
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bundles<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="~/Bundles/Beginner">Beginner</a></li>
-                            <li><a href="~/Bundles/MidGrade">Mid-Grade</a></li>
-                            <li><a href="~/Bundles/Professional">Professional</a></li>
-                        </ul>
-                    </li>
-                    <!-- Bundles Nav End -->
+                    </a>
+                </div>
+                <!-- Search Bar -->
+                <form class="navbar-form navbar-right">
+                    <div class="form-group" id="searchbar">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                </form>
+                <!-- Search bar end -->  
+    		</div>
+            <div class="container" id="navuser">
+                    
+                <!--Main Nav -->
+                <div class="navbar-collapse collapse" id="usernav">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                         <!-- Computer Parts Nav Start -->
+                        <li class="dropdown" >
+    						
+                            <a asp-area="" asp-controller="ComputerParts" asp-action="Index" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" 
+                                data-toggle="dropdown" role="button">Computer Parts<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/ComputerParts/Cases">Cases</a></li>
+                                <li><a href="~/ComputerParts/Processors">Processors</a></li>
+                                <li role="separator" class="divider"></li> <!-- Optional Divider -->
+                                <li><a href="~/ComputerParts/Motherboards">Motherboards</a></li>
+                                <li><a href="~/ComputerParts/Memory">Memory</a></li>
+                                <li><a href="~/ComputerParts/CoolingSystems">Cooling Systems</a></li>
+                                <li><a href="~/ComputerParts/SoundCards">Sound Cards</a></li>
+                                <li><a href="~/ComputerParts/VideoCards">Video Cards</a></li>
+                                <li><a href="~/ComputerParts/PowerSupply">Power Supply</a></li>
+                            </ul>
+                        </li>
+                        <!-- Computer Parts Nav End -->
+                            
+                        <!-- Accessories Nav Start -->
+                        <li class="dropdown">
+                            <a asp-area="" asp-controller="Accessories" asp-action="Index" class="dropdown-toggle"
+                                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accessories<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Accessories/Chargers">Chargers</a></li>
+                                <li><a href="~/Accessories/Adapter">Adapter</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="~/Accessories/MiscCables">Misc. Cables</a></li>
+                                <li><a href="~/Accessories/HeadPhones">Head Phones</a></li>
+                                <li><a href="~/Accessories/StorageDevices">Storage Devices</a></li>
+                            </ul>
+                        </li>
+                        <!-- Accessories Nav End -->
+    
+                        <!-- Bundles Nav Start -->
+                        <li class="dropdown">
+                            <a asp-area="" asp-controller="Bundles" asp-action="Index" class="dropdown-toggle" 
+                                data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bundles<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Bundles/Beginner">Beginner</a></li>
+                                <li><a href="~/Bundles/MidGrade">Mid-Grade</a></li>
+                                <li><a href="~/Bundles/Professional">Professional</a></li>
+                            </ul>
+                        </li>
+                        <!-- Bundles Nav End -->
+                    </ul>
+                    <div class="navbar-collapse collapse" id="sidenavmain">
                     <!-- Contact Nav -->
-                </ul>
-                <ul class="nav navbar-nav navbar-right pull-right" id="groupnav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
-                </ul> <!-- End Contact Nav -->
-            </div> <!-- End navbar-collapse -->
-        </div> <!-- End nav container -->
-    </nav> <!-- End Nav Bar -->
+                        <ul class="nav navbar-nav navbar-right pull-right" id="sidenavmain">
+                            <li><a asp-area="" asp-controller="Home" asp-action="SignIn">Sign-In</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="WishList">Wish List</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                        </ul> <!-- End Contact Nav -->
+                    </div>
+                </div> <!-- End navbar-collapse -->
+            </div> <!-- End nav container -->
+        </nav> <!-- End Nav Bar -->
+    </header>
 
-    <!-- Body Start -->    
+    <!-- Body Start -->   
     <div class="container body-content">
-            <div class="row">
-                <div class="col-md-12" id="">
-                    <h1>@ViewBag.Title</h1>
-                </div>
-            </div>
-            @RenderBody()
-            <div class="row">
-                <div class="col-md-3" id="filter">
-                    <h2>@ViewBag.SideBarTitle</h2>
-                </div>
-                <div class="col-md-7" id="maincontent">
-                    <h2>@ViewBag.MainTitle</h2>
-                </div>
-            </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" id="titlebar">
+                <h1>@ViewData["PageTitle"]</h1>
+            </div>
+        </div>
+        @RenderBody()
+        <!-- Only use below if we contruct a filter nav on the left -->
+        <div class="row">
+            <div class="col-md-2" id="filternav">
+                <h2>@ViewBag.SideBarTitle</h2>
+                <!-- TODO: Construct filter nav maybe? -->
+            </div>
+            <div class="col-md-10" id="maincontent">
+                <!--<h2>@ViewData["PageName"]</h2>-->
+                <!-- TODO: Move RenderBody here -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="">
                 <footer id="sitemap">
                     <p>&copy; @DateTime.Now.Year - Team 404</p>
                 </footer>
